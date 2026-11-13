@@ -133,9 +133,7 @@ function AIHandoverAssistant() {
                   placeholder="Enter relevant clinical information, such as current condition, recent treatments, medication changes, allergies, pending tests, and follow-up tasks..."
                   required
                 />
-                <span className="ai-hint">
-                  Use fictional information while testing this prototype.
-                </span>
+                
               </div>
 
               {error && <p className="ai-error">{error}</p>}
