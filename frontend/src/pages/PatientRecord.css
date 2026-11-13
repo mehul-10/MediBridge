@@ -1,0 +1,345 @@
+
+.record-page {
+  min-height: 100vh;
+  background: #f4f8fb;
+  color: #172b4d;
+  font-family: Arial, sans-serif;
+}
+
+.record-header {
+  height: 75px;
+  padding: 0 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border-bottom: 1px solid #e5edf2;
+}
+
+.record-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #087f8c;
+  font-size: 23px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.record-back {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #526579;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.record-main {
+  width: 90%;
+  max-width: 1050px;
+  margin: 40px auto;
+}
+
+.record-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.record-heading h1 {
+  margin: 0 0 8px;
+  font-size: 27px;
+}
+
+.record-heading p {
+  margin: 0;
+  color: #8290a0;
+  font-size: 13px;
+}
+
+.record-access-label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 12px;
+  border-radius: 20px;
+  background: #e5f4f4;
+  color: #087f8c;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.record-patient-banner {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 25px;
+  margin-bottom: 23px;
+  background: #ffffff;
+  border: 1px solid #e7edf1;
+  border-radius: 12px;
+}
+
+.record-avatar {
+  width: 65px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #e5f4f4;
+  color: #087f8c;
+}
+
+.record-patient-info {
+  flex: 1;
+}
+
+.record-patient-info h2 {
+  margin: 0 0 7px;
+  font-size: 19px;
+}
+
+.record-patient-info p {
+  margin: 0 0 5px;
+  color: #087f8c;
+  font-size: 12px;
+}
+
+.record-patient-info span {
+  color: #8290a0;
+  font-size: 12px;
+}
+
+.record-blood-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 13px 20px;
+  border-radius: 9px;
+  background: #fff0f0;
+}
+
+.record-blood-group span {
+  color: #a86a6a;
+  font-size: 11px;
+}
+
+.record-blood-group strong {
+  color: #cf5555;
+  font-size: 22px;
+}
+
+.record-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-bottom: 23px;
+}
+
+.record-info-card {
+  padding: 22px;
+  background: #ffffff;
+  border: 1px solid #e7edf1;
+  border-radius: 11px;
+}
+
+.record-card-heading,
+.record-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #087f8c;
+}
+
+.record-card-heading h3 {
+  margin: 0;
+  color: #172b4d;
+  font-size: 15px;
+}
+
+.record-card-heading.warning {
+  color: #d58b32;
+}
+
+.record-info-card > p {
+  margin: 17px 0 0;
+  color: #64758a;
+  font-size: 14px;
+}
+
+.record-section {
+  padding: 23px;
+  margin-bottom: 22px;
+  background: #ffffff;
+  border: 1px solid #e7edf1;
+  border-radius: 11px;
+}
+
+.record-section-heading {
+  margin-bottom: 20px;
+}
+
+.record-section-heading h2 {
+  margin: 0;
+  color: #172b4d;
+  font-size: 17px;
+}
+
+.record-medication-list,
+.record-document-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.record-medication-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 0;
+  border-top: 1px solid #edf1f4;
+  color: #617386;
+  font-size: 13px;
+}
+
+.record-medication-item svg {
+  color: #087f8c;
+}
+
+.record-document {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 15px 0;
+  border-top: 1px solid #edf1f4;
+}
+
+.record-document-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  background: #e5f4f4;
+  color: #087f8c;
+}
+
+.record-document > div:nth-child(2) {
+  flex: 1;
+}
+
+.record-document h3 {
+  margin: 0 0 5px;
+  font-size: 13px;
+}
+
+.record-document p {
+  margin: 0;
+  color: #8290a0;
+  font-size: 11px;
+}
+
+.record-document > span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #8290a0;
+  font-size: 11px;
+}
+
+.record-handover-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 22px;
+  background: #e5f4f4;
+  border-radius: 11px;
+}
+
+.record-handover-link > div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #087f8c;
+}
+
+.record-handover-link h3 {
+  margin: 0 0 6px;
+  color: #172b4d;
+  font-size: 14px;
+}
+
+.record-handover-link p {
+  margin: 0;
+  color: #58777d;
+  font-size: 12px;
+}
+
+.record-handover-link > a {
+  padding: 11px 15px;
+  border-radius: 7px;
+  background: #087f8c;
+  color: #ffffff;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.record-disclaimer {
+  margin-top: 22px;
+  color: #8290a0;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.record-not-found {
+  width: 90%;
+  max-width: 600px;
+  margin: 100px auto;
+  text-align: center;
+}
+
+.record-not-found a {
+  color: #087f8c;
+}
+
+@media (max-width: 650px) {
+  .record-header {
+    padding: 0 5%;
+  }
+
+  .record-main {
+    width: 92%;
+    margin: 25px auto;
+  }
+
+  .record-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .record-patient-banner {
+    flex-wrap: wrap;
+  }
+
+  .record-blood-group {
+    width: 100%;
+  }
+
+  .record-document {
+    flex-wrap: wrap;
+  }
+
+  .record-document > span {
+    width: 100%;
+    margin-left: 53px;
+  }
+
+  .record-handover-link {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

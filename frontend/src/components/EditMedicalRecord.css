@@ -1,0 +1,202 @@
+/* Edit Medical Record uses the same modal styling as Add Medical Record */
+
+.add-record-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(5px);
+}
+
+.add-record-modal {
+  width: 100%;
+  max-width: 650px;
+  max-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.add-record-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 26px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.add-record-heading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.add-record-icon {
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2563eb;
+  background: #eff6ff;
+  border-radius: 12px;
+}
+
+.add-record-heading h2 {
+  margin: 0 0 5px;
+  color: #111827;
+  font-size: 20px;
+}
+
+.add-record-heading p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.add-record-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  color: #6b7280;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.add-record-close:hover {
+  color: #111827;
+  background: #f3f4f6;
+}
+
+.add-record-modal form {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.add-record-body {
+  padding: 24px 26px;
+  overflow-y: auto;
+}
+
+.add-record-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 19px;
+}
+
+.add-record-field label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #374151;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.add-record-field input,
+.add-record-field select,
+.add-record-field textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 11px 13px;
+  color: #111827;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  outline: none;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.add-record-field input:focus,
+.add-record-field select:focus,
+.add-record-field textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.add-record-field textarea {
+  resize: vertical;
+  min-height: 70px;
+}
+
+.add-record-error {
+  margin-bottom: 18px;
+  padding: 12px 14px;
+  color: #b91c1c;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.add-record-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 18px 26px;
+  border-top: 1px solid #e5e7eb;
+  background: #ffffff;
+}
+
+.add-record-cancel,
+.add-record-submit {
+  padding: 11px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.add-record-cancel {
+  color: #374151;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+}
+
+.add-record-submit {
+  color: #ffffff;
+  background: #2563eb;
+  border: 1px solid #2563eb;
+}
+
+.add-record-submit:hover {
+  background: #1d4ed8;
+}
+
+.add-record-cancel:disabled,
+.add-record-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+  .add-record-overlay {
+    padding: 10px;
+  }
+
+  .add-record-header,
+  .add-record-body,
+  .add-record-footer {
+    padding-left: 17px;
+    padding-right: 17px;
+  }
+
+  .add-record-heading h2 {
+    font-size: 17px;
+  }
+}

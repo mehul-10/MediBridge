@@ -1,0 +1,229 @@
+
+.record-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(4px);
+}
+
+.record-modal {
+  width: 100%;
+  max-width: 680px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  animation: recordModalAppear 0.2s ease-out;
+}
+
+@keyframes recordModalAppear {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.record-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 25px;
+  border-bottom: 1px solid #e8edf3;
+}
+
+.record-modal-heading {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.record-modal-icon {
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2563eb;
+  background: #eff6ff;
+  border-radius: 12px;
+}
+
+.record-modal-heading h2 {
+  margin: 0 0 5px;
+  color: #172033;
+  font-size: 19px;
+}
+
+.record-modal-heading p {
+  margin: 0;
+  color: #718096;
+  font-size: 13px;
+}
+
+.record-modal-close {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 9px;
+  background: #f1f5f9;
+  color: #475569;
+  cursor: pointer;
+}
+
+.record-modal-close:hover {
+  background: #e2e8f0;
+}
+
+.record-modal-body {
+  padding: 25px;
+}
+
+.record-modal-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.record-modal-title h3 {
+  margin: 0;
+  color: #172033;
+  font-size: 21px;
+}
+
+.record-modal-title span {
+  padding: 7px 12px;
+  color: #1d4ed8;
+  background: #eff6ff;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.record-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  padding: 20px;
+  margin-bottom: 25px;
+  background: #f8fafc;
+  border: 1px solid #edf1f5;
+  border-radius: 12px;
+}
+
+.record-detail-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  min-width: 0;
+  color: #64748b;
+}
+
+.record-detail-item svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: #2563eb;
+}
+
+.record-detail-item label {
+  display: block;
+  margin-bottom: 5px;
+  color: #718096;
+  font-size: 12px;
+}
+
+.record-detail-item p {
+  margin: 0;
+  color: #243044;
+  font-size: 14px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.record-detail-section {
+  padding: 17px 0;
+  border-bottom: 1px solid #edf1f5;
+}
+
+.record-detail-section:last-child {
+  border-bottom: none;
+}
+
+.record-detail-section h4 {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0 0 9px;
+  color: #263449;
+  font-size: 14px;
+}
+
+.record-detail-section h4 svg {
+  color: #2563eb;
+}
+
+.record-detail-section p {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.record-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px 25px;
+  border-top: 1px solid #e8edf3;
+}
+
+.record-modal-footer button {
+  padding: 10px 22px;
+  border: none;
+  border-radius: 9px;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.record-modal-footer button:hover {
+  background: #1d4ed8;
+}
+
+@media (max-width: 600px) {
+  .record-modal-overlay {
+    padding: 10px;
+  }
+
+  .record-modal-header,
+  .record-modal-body {
+    padding: 18px;
+  }
+
+  .record-detail-grid {
+    grid-template-columns: 1fr;
+    padding: 15px;
+  }
+
+  .record-modal-title h3 {
+    font-size: 18px;
+  }
+}

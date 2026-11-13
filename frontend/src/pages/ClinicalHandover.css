@@ -1,0 +1,205 @@
+
+.handover-page {
+  min-height: 100vh;
+  background: #f4f7fb;
+  color: #1e293b;
+  font-family: Arial, sans-serif;
+}
+
+.handover-header {
+  height: 70px;
+  padding: 0 7%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e5eaf0;
+}
+
+.handover-back {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #526174;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.handover-logo {
+  font-size: 23px;
+  font-weight: 700;
+  color: #087f8c;
+}
+
+.handover-container {
+  max-width: 950px;
+  margin: 40px auto;
+  padding: 0 20px 50px;
+}
+
+.handover-heading {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.handover-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 14px;
+  background: #dff5f3;
+  color: #087f8c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.handover-heading h1 {
+  margin: 0 0 7px;
+  font-size: 29px;
+}
+
+.handover-heading p {
+  margin: 0;
+  color: #718096;
+  font-size: 14px;
+}
+
+.handover-form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.handover-section {
+  background: white;
+  padding: 27px;
+  border: 1px solid #e5eaf0;
+  border-radius: 13px;
+}
+
+.handover-section h2 {
+  font-size: 19px;
+  margin: 0 0 22px;
+  color: #087f8c;
+}
+
+.handover-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.handover-field {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-bottom: 19px;
+}
+
+.handover-field:last-child {
+  margin-bottom: 0;
+}
+
+.handover-field label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #344256;
+}
+
+.handover-field input,
+.handover-field select,
+.handover-field textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #d8e0e9;
+  border-radius: 8px;
+  padding: 12px 13px;
+  font-family: inherit;
+  font-size: 14px;
+  color: #263548;
+  background: white;
+  outline: none;
+}
+
+.handover-field textarea {
+  min-height: 105px;
+  resize: vertical;
+}
+
+.handover-field input:focus,
+.handover-field select:focus,
+.handover-field textarea:focus {
+  border-color: #087f8c;
+  box-shadow: 0 0 0 3px rgba(8, 127, 140, 0.1);
+}
+
+.handover-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.handover-submit {
+  border: none;
+  border-radius: 8px;
+  background: #087f8c;
+  color: white;
+  padding: 13px 23px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.handover-submit:hover {
+  background: #066b76;
+}
+
+.handover-cancel {
+  text-decoration: none;
+  color: #64748b;
+  font-size: 14px;
+  padding: 12px;
+}
+
+.handover-success {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: #e7f7ed;
+  color: #187443;
+  border: 1px solid #b9e7c9;
+  padding: 14px 17px;
+  border-radius: 9px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+@media (max-width: 650px) {
+  .handover-header {
+    padding: 0 18px;
+  }
+
+  .handover-container {
+    margin-top: 25px;
+  }
+
+  .handover-heading h1 {
+    font-size: 23px;
+  }
+
+  .handover-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .handover-section {
+    padding: 20px;
+  }
+
+  .handover-actions {
+    flex-wrap: wrap;
+  }
+}

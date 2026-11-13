@@ -1,0 +1,282 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f5f8fc;
+  color: #172b4d;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.home-page {
+  min-height: 100vh;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  background: #ffffff;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #087f8c;
+  font-size: 25px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: #0796a3;
+}
+
+.nav-button,
+.primary-button {
+  background: #087f8c;
+  color: white;
+  padding: 12px 22px;
+  border-radius: 8px;
+}
+
+.nav-button:hover,
+.primary-button:hover {
+  background: #066b75;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  padding: 100px 10%;
+  background: linear-gradient(135deg, #eaf8fa, #f5f8fc);
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.tagline {
+  color: #087f8c;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.hero h1 {
+  font-size: clamp(38px, 5vw, 58px);
+  line-height: 1.15;
+  margin: 22px 0;
+  color: #142c4c;
+}
+
+.hero h1 span {
+  display: block;
+  color: #087f8c;
+}
+
+.hero-content > p {
+  color: #607086;
+  line-height: 1.8;
+  font-size: 17px;
+  margin-bottom: 30px;
+}
+
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.primary-button,
+.secondary-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 22px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.secondary-button {
+  border: 1px solid #087f8c;
+  color: #087f8c;
+}
+
+.hero-card {
+  width: 360px;
+  padding: 35px;
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 15px 45px rgba(23, 43, 77, 0.1);
+}
+
+.card-icon {
+  display: inline-flex;
+  padding: 15px;
+  background: #e4f6f6;
+  color: #087f8c;
+  border-radius: 12px;
+}
+
+.hero-card h3 {
+  margin: 22px 0 10px;
+  font-size: 22px;
+}
+
+.hero-card > p {
+  color: #718096;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.health-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 0;
+  border-top: 1px solid #edf1f5;
+  color: #42536b;
+}
+
+.health-item svg {
+  color: #087f8c;
+  width: 20px;
+}
+
+.features {
+  padding: 85px 10%;
+  text-align: center;
+}
+
+.features h2,
+.about h2 {
+  font-size: 32px;
+  color: #172b4d;
+}
+
+.section-description {
+  margin: 15px 0 45px;
+  color: #718096;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.feature-card {
+  background: white;
+  padding: 35px 25px;
+  border-radius: 14px;
+  box-shadow: 0 5px 25px rgba(23, 43, 77, 0.05);
+  text-align: left;
+}
+
+.feature-card > svg {
+  color: #087f8c;
+  width: 32px;
+  height: 32px;
+}
+
+.feature-card h3 {
+  margin: 20px 0 12px;
+}
+
+.feature-card p {
+  color: #718096;
+  line-height: 1.7;
+}
+
+.about {
+  text-align: center;
+  padding: 75px 15%;
+  background: #eaf5f7;
+}
+
+.about p {
+  max-width: 700px;
+  margin: 20px auto 0;
+  color: #607086;
+  line-height: 1.8;
+}
+
+footer {
+  background: #142c4c;
+  color: white;
+  text-align: center;
+  padding: 35px 20px;
+  line-height: 2;
+}
+
+footer p {
+  color: #c4d1df;
+  font-size: 14px;
+}
+
+@media (max-width: 850px) {
+  .hero {
+    flex-direction: column;
+    padding: 65px 7%;
+  }
+
+  .hero-card {
+    width: 100%;
+    max-width: 420px;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .navbar {
+    padding: 18px 5%;
+  }
+
+  .nav-links {
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 550px) {
+  .nav-links a:nth-child(1),
+  .nav-links a:nth-child(2) {
+    display: none;
+  }
+
+  .hero h1 {
+    font-size: 38px;
+  }
+
+  .features h2,
+  .about h2 {
+    font-size: 26px;
+  }
+}

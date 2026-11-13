@@ -1,0 +1,389 @@
+
+.ai-page {
+  min-height: 100vh;
+  background: #f4f7fb;
+  color: #1e293b;
+  font-family: Arial, sans-serif;
+}
+
+.ai-header {
+  height: 70px;
+  padding: 0 7%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e5eaf0;
+}
+
+.ai-back {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #526174;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.ai-logo {
+  font-size: 23px;
+  font-weight: 700;
+  color: #087f8c;
+}
+
+.ai-container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px 50px;
+}
+
+.ai-heading {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 25px;
+}
+
+.ai-heading-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 14px;
+  background: #dff5f3;
+  color: #087f8c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ai-heading h1 {
+  margin: 0 0 7px;
+  font-size: 29px;
+}
+
+.ai-heading p {
+  margin: 0;
+  color: #718096;
+  font-size: 14px;
+}
+
+.ai-demo-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 14px 17px;
+  margin-bottom: 22px;
+  border: 1px solid #c9dff5;
+  border-radius: 9px;
+  background: #edf6ff;
+  color: #28577e;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.ai-demo-notice svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.ai-workspace {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  align-items: stretch;
+}
+
+.ai-input-card,
+.ai-output-card {
+  background: white;
+  border: 1px solid #e5eaf0;
+  border-radius: 13px;
+  padding: 25px;
+}
+
+.ai-card-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #087f8c;
+  margin-bottom: 23px;
+}
+
+.ai-card-heading h2 {
+  margin: 0;
+  color: #263548;
+  font-size: 19px;
+}
+
+.ai-field {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-bottom: 20px;
+}
+
+.ai-field label {
+  color: #344256;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.ai-field input,
+.ai-field textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #d8e0e9;
+  border-radius: 8px;
+  padding: 12px 13px;
+  color: #263548;
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+}
+
+.ai-field textarea {
+  min-height: 245px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.ai-field input:focus,
+.ai-field textarea:focus {
+  border-color: #087f8c;
+  box-shadow: 0 0 0 3px rgba(8, 127, 140, 0.1);
+}
+
+.ai-hint {
+  color: #8290a2;
+  font-size: 12px;
+}
+
+.ai-error {
+  color: #b42318;
+  font-size: 13px;
+  margin: -8px 0 15px;
+}
+
+.ai-buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.ai-generate-button,
+.ai-reset-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.ai-generate-button {
+  border: none;
+  background: #087f8c;
+  color: white;
+}
+
+.ai-generate-button:hover {
+  background: #066b76;
+}
+
+.ai-reset-button {
+  background: white;
+  border: 1px solid #d8e0e9;
+  color: #526174;
+}
+
+.ai-empty-state {
+  min-height: 330px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 15px;
+}
+
+.ai-empty-icon {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background: #edf6f6;
+  color: #087f8c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 17px;
+}
+
+.ai-empty-state h3 {
+  margin: 0 0 9px;
+  font-size: 17px;
+}
+
+.ai-empty-state p {
+  max-width: 300px;
+  color: #8290a2;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.ai-summary-result {
+  padding: 17px;
+  border-radius: 9px;
+  background: #f7fafc;
+  border: 1px solid #e5eaf0;
+}
+
+.ai-patient-reference {
+  color: #087f8c;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.ai-summary-result h3 {
+  margin: 0 0 12px;
+  font-size: 16px;
+}
+
+.ai-summary-result p {
+  color: #526174;
+  font-size: 14px;
+  line-height: 1.8;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.ai-review-note {
+  margin-top: 18px;
+  padding: 12px;
+  border-radius: 7px;
+  background: #fff7e6;
+  color: #855b12;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.ai-disclaimer {
+  margin-top: 22px;
+  padding: 16px 18px;
+  background: #fff7e6;
+  border: 1px solid #f2d59b;
+  border-radius: 9px;
+  color: #855b12;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.ai-footer-actions {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 23px;
+}
+
+.ai-secondary-link {
+  color: #087f8c;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.ai-secondary-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 750px) {
+  .ai-header {
+    padding: 0 18px;
+  }
+
+  .ai-container {
+    margin-top: 25px;
+  }
+
+  .ai-heading h1 {
+    font-size: 23px;
+  }
+
+  .ai-workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .ai-input-card,
+  .ai-output-card {
+    padding: 20px;
+  }
+}
+.ai-summary-text {
+  color: #526174;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.8;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  margin: 0;
+}
+
+/* AI to Clinical Handover Transfer Button */
+.ai-transfer-button {
+  width: 100%;
+  min-height: 50px;
+  margin-top: 20px;
+  padding: 14px 20px;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+
+  background: linear-gradient(135deg, #087f8c 0%, #2563eb 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  text-decoration: none;
+
+  box-shadow: 0 5px 14px rgba(8, 127, 140, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease,
+    filter 0.2s ease;
+}
+
+.ai-transfer-button svg {
+  flex-shrink: 0;
+}
+
+.ai-transfer-button:hover {
+  color: #ffffff;
+  filter: brightness(1.08);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(8, 127, 140, 0.28);
+}
+
+.ai-transfer-button:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 8px rgba(8, 127, 140, 0.2);
+}
+
+.ai-transfer-button:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.3);
+  outline-offset: 3px;
+}
+
+@media (max-width: 480px) {
+  .ai-transfer-button {
+    font-size: 13px;
+    padding: 13px 12px;
+  }
+}
