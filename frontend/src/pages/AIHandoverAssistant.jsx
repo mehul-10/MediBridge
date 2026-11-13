@@ -14,11 +14,6 @@ import {
 } from "lucide-react";
 import "./AIHandoverAssistant.css";
 
-const response = await API.post(
-  "/ai-handover/generate",
-  { clinicalNotes: clinicalNotes.trim() }
-);
-
 const summarySections = [
   ["Patient Condition", "patientCondition"],
   ["Relevant History", "relevantHistory"],
@@ -49,21 +44,9 @@ function AIHandoverAssistant() {
     setSummary(null);
 
     try {
-      const token = localStorage.getItem("token");
-
-      if (!token) {
-        throw new Error("Please log in again to generate a handover draft.");
-      }
-
-      const response = await axios.post(
-        API_URL,
-        { clinicalNotes: clinicalNotes.trim() },
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-            "Content-Type": "application/json",
-          },
-        }
+      const response = await API.post(
+        "/ai-handover/generate",
+        { clinicalNotes: clinicalNotes.trim() }
       );
 
       if (!response.data.success || !response.data.summary) {
@@ -115,8 +98,8 @@ function AIHandoverAssistant() {
         <div className="ai-demo-notice">
           <Sparkles size={18} />
           <span>
-            Local AI mode: summaries are generated using the Qwen model
-            running through Ollama on this computer.
+            AI-powered mode: clinical notes are processed by the configured
+            AI service to generate a structured handover draft.
           </span>
         </div>
 
@@ -219,26 +202,26 @@ function AIHandoverAssistant() {
                 </div>
 
                 <div className="ai-review-note">
-  <AlertTriangle size={18} />
-  <span>
-    AI-generated draft — clinician review and verification
-    are required before clinical use.
-  </span>
-</div>
+                  <AlertTriangle size={18} />
+                  <span>
+                    AI-generated draft — clinician review and verification
+                    are required before clinical use.
+                  </span>
+                </div>
 
-<Link
-  to="/clinical-handover"
-  state={{
-    aiHandover: {
-      ...summary,
-      patientId,
-    },
-  }}
-  className="ai-transfer-button"
->
-  <ClipboardCheck size={18} />
-  Transfer to Clinical Handover
-</Link>
+                <Link
+                  to="/clinical-handover"
+                  state={{
+                    aiHandover: {
+                      ...summary,
+                      patientId,
+                    },
+                  }}
+                  className="ai-transfer-button"
+                >
+                  <ClipboardCheck size={18} />
+                  Transfer to Clinical Handover
+                </Link>
               </div>
             ) : (
               <div className="ai-empty-state">
