@@ -62,6 +62,7 @@ function ClinicalDocuments() {
   const [showCamera, setShowCamera] = useState(false);
   const [cameraError, setCameraError] = useState("");
   const [cameraStream, setCameraStream] = useState(null);
+  const [cameraFacingMode, setCameraFacingMode] = useState("environment");
   const [capturedPreview, setCapturedPreview] = useState("");
 
   const fileInputRef = useRef(null);
@@ -101,7 +102,7 @@ function ClinicalDocuments() {
     }
   }, [showCamera, cameraStream]);
 
-  // Stop camera and release resources on unmount
+  // Release camera resources on unmount
   useEffect(() => {
     return () => {
       if (cameraStream) {
@@ -202,17 +203,32 @@ function ClinicalDocuments() {
     setShowModal(true);
   };
 
+  // Stop camera
+  const stopCamera = () => {
+    if (cameraStream) {
+      cameraStream.getTracks().forEach((track) => track.stop());
+    }
+
+    if (videoRef.current) {
+      videoRef.current.srcObject = null;
+    }
+
+    setCameraStream(null);
+    setShowCamera(false);
+    setCameraError("");
+  };
+
   // Close upload modal
   const closeModal = () => {
     if (saving) return;
 
+    stopCamera();
     setShowModal(false);
     setEditingDocument(null);
     setForm(initialForm);
     setSelectedFile(null);
     setError("");
     clearCapturedPreview();
-    stopCamera();
   };
 
   // Form changes
@@ -229,9 +245,7 @@ function ClinicalDocuments() {
   const handleFileChange = (event) => {
     const file = event.target.files?.[0];
 
-    if (!file) {
-      return;
-    }
+    if (!file) return;
 
     const allowedTypes = [
       "application/pdf",
@@ -260,7 +274,7 @@ function ClinicalDocuments() {
   };
 
   // Start laptop / mobile camera
-  const startCamera = async () => {
+  const startCamera = async (facingMode = cameraFacingMode) => {
     try {
       setCameraError("");
 
@@ -270,9 +284,20 @@ function ClinicalDocuments() {
         );
       }
 
+      // Release previous camera before switching
+      if (cameraStream) {
+        cameraStream.getTracks().forEach((track) => track.stop());
+      }
+
+      if (videoRef.current) {
+        videoRef.current.srcObject = null;
+      }
+
+      setCameraStream(null);
+
       const stream = await navigator.mediaDevices.getUserMedia({
         video: {
-          facingMode: "user",
+          facingMode: { ideal: facingMode },
           width: { ideal: 1280 },
           height: { ideal: 720 },
         },
@@ -280,6 +305,7 @@ function ClinicalDocuments() {
       });
 
       setCameraStream(stream);
+      setCameraFacingMode(facingMode);
       setShowCamera(true);
     } catch (err) {
       let message = "Unable to access your camera.";
@@ -287,8 +313,11 @@ function ClinicalDocuments() {
       if (err.name === "NotAllowedError") {
         message =
           "Camera permission denied. Please allow camera access in your browser settings.";
-      } else if (err.name === "NotFoundError") {
-        message = "No camera was detected on this device.";
+      } else if (
+        err.name === "NotFoundError" ||
+        err.name === "OverconstrainedError"
+      ) {
+        message = "The selected camera is unavailable on this device.";
       } else if (err.name === "NotReadableError") {
         message =
           "Camera is currently being used by another application.";
@@ -300,18 +329,12 @@ function ClinicalDocuments() {
     }
   };
 
-  // Stop camera
-  const stopCamera = () => {
-    if (cameraStream) {
-      cameraStream.getTracks().forEach((track) => track.stop());
-    }
+  // Switch between front and back cameras
+  const switchCamera = async () => {
+    const nextFacingMode =
+      cameraFacingMode === "environment" ? "user" : "environment";
 
-    if (videoRef.current) {
-      videoRef.current.srcObject = null;
-    }
-
-    setCameraStream(null);
-    setShowCamera(false);
+    await startCamera(nextFacingMode);
   };
 
   // Capture photograph
@@ -417,13 +440,13 @@ function ClinicalDocuments() {
         setSuccess("Clinical document uploaded successfully.");
       }
 
+      stopCamera();
       setShowModal(false);
       setEditingDocument(null);
       setForm(initialForm);
       setSelectedFile(null);
 
       clearCapturedPreview();
-      stopCamera();
 
       await loadDocuments();
     } catch (err) {
@@ -820,7 +843,7 @@ function ClinicalDocuments() {
                     <button
                       type="button"
                       className="clinical-upload-option"
-                      onClick={startCamera}
+                      onClick={() => startCamera("environment")}
                     >
                       <Camera size={20} />
                       <span>Take Photo</span>
@@ -1029,8 +1052,21 @@ function ClinicalDocuments() {
 
               <button
                 type="button"
+                className="cancel"
+                onClick={switchCamera}
+                disabled={!cameraStream}
+              >
+                <RefreshCw size={16} />
+                {cameraFacingMode === "environment"
+                  ? "Switch to Front Camera"
+                  : "Switch to Back Camera"}
+              </button>
+
+              <button
+                type="button"
                 className="save"
                 onClick={capturePhoto}
+                disabled={!cameraStream}
               >
                 <Camera size={17} />
                 Capture Photo
